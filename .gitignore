@@ -1,0 +1,9 @@
+# Editor
+.idea/
+*.iml
+
+# environment
+venv/
+
+# Files for testing
+vgg19/cat*.jpg
