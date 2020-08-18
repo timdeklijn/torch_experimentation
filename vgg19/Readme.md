@@ -11,11 +11,13 @@
      4   'conv1_2'   Convolution             64 3x3x64 convolutions with stride [1  1] and padding [1  1  1  1]
      5   'relu1_2'   ReLU                    ReLU
      6   'pool1'     Max Pooling             2x2 max pooling with stride [2  2] and padding [0  0  0  0]
+
      7   'conv2_1'   Convolution             128 3x3x64 convolutions with stride [1  1] and padding [1  1  1  1]
      8   'relu2_1'   ReLU                    ReLU
      9   'conv2_2'   Convolution             128 3x3x128 convolutions with stride [1  1] and padding [1  1  1  1]
     10   'relu2_2'   ReLU                    ReLU
     11   'pool2'     Max Pooling             2x2 max pooling with stride [2  2] and padding [0  0  0  0]
+
     12   'conv3_1'   Convolution             256 3x3x128 convolutions with stride [1  1] and padding [1  1  1  1]
     13   'relu3_1'   ReLU                    ReLU
     14   'conv3_2'   Convolution             256 3x3x256 convolutions with stride [1  1] and padding [1  1  1  1]
@@ -25,6 +27,7 @@
     18   'conv3_4'   Convolution             256 3x3x256 convolutions with stride [1  1] and padding [1  1  1  1]
     19   'relu3_4'   ReLU                    ReLU
     20   'pool3'     Max Pooling             2x2 max pooling with stride [2  2] and padding [0  0  0  0]
+
     21   'conv4_1'   Convolution             512 3x3x256 convolutions with stride [1  1] and padding [1  1  1  1]
     22   'relu4_1'   ReLU                    ReLU
     23   'conv4_2'   Convolution             512 3x3x512 convolutions with stride [1  1] and padding [1  1  1  1]
@@ -34,6 +37,7 @@
     27   'conv4_4'   Convolution             512 3x3x512 convolutions with stride [1  1] and padding [1  1  1  1]
     28   'relu4_4'   ReLU                    ReLU
     29   'pool4'     Max Pooling             2x2 max pooling with stride [2  2] and padding [0  0  0  0]
+
     30   'conv5_1'   Convolution             512 3x3x512 convolutions with stride [1  1] and padding [1  1  1  1]
     31   'relu5_1'   ReLU                    ReLU
     32   'conv5_2'   Convolution             512 3x3x512 convolutions with stride [1  1] and padding [1  1  1  1]
@@ -43,6 +47,7 @@
     36   'conv5_4'   Convolution             512 3x3x512 convolutions with stride [1  1] and padding [1  1  1  1]
     37   'relu5_4'   ReLU                    ReLU
     38   'pool5'     Max Pooling             2x2 max pooling with stride [2  2] and padding [0  0  0  0]
+
     39   'fc6'       Fully Connected         4096 fully connected layer
     40   'relu6'     ReLU                    ReLU
     41   'drop6'     Dropout                 50% dropout
@@ -53,3 +58,16 @@
     46   'prob'      Softmax                 softmax
     47   'output'    Classification Output   crossentropyex with 'tench' and 999 other classes
 ```
+
+## Train VGG19 to recognise gen. 1 pokemon
+
+The dataset can be downloaded from:
+
+[Dataset](https://www.kaggle.com/thedagger/pokemon-generation-one)
+
+Loading data can be automated using `torchvision`:
+
+[TorchVision](https://pytorch.org/tutorials/beginner/data_loading_tutorial.html)
+
+Before training, first move a percentage of the images to a test folder, we do not need a custom code to scale down the
+images.

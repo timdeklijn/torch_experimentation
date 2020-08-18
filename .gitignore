@@ -7,3 +7,6 @@ venv/
 
 # Files for testing
 vgg19/cat*.jpg
+vgg19/train/
+vgg19/test/
+vgg19/nets/
